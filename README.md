@@ -1,0 +1,1 @@
+# Haftalik-Aylik-Rapor-LcWaikiki-VisualBasic
