@@ -1,0 +1,1295 @@
+Private Sub Haftalık_Rapor_Click()
+Dim a, b, c, d, e As Variant
+a = 2
+b = 2
+c = 2
+d = 2
+e = 2
+' STOK RAPORU
+Do While (Sayfa2.Cells(b, 1) > 0)
+    If (Sayfa2.Cells(b, 1) = "BG") Then
+        If (Sayfa2.Cells(b, 4) = "AKSESUAR" Or Sayfa2.Cells(b, 4) = "BANYO" Or Sayfa2.Cells(b, 4) = "DERİ AKSESUAR" Or Sayfa2.Cells(b, 4) = "DOKUMA AKSESUAR" Or Sayfa2.Cells(b, 4) = "KRAVAT/PAPYON" Or Sayfa2.Cells(b, 4) = "SAÇ AKSESUAR" Or Sayfa2.Cells(b, 4) = "STANDART DIŞI" Or Sayfa2.Cells(b, 4) = "TRİKO ÖRME AKSESUAR") Then
+            If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                aa = Sayfa2.Cells(b, 5) ' aksesuar yeni sezon depo stok
+                ab = ab + aa ' aksesuar yeni sezon depo stok toplamı
+                ac = Sayfa2.Cells(b, 6) 'aksesuar yeni sezon reyok stok
+                ad = ad + ac 'aksesuar yeni sezon reyon stok toplamı
+                b = b + 1
+            Else
+                ae = Sayfa2.Cells(b, 5) ' aksesuar eski sezon depo stok
+                af = af + ae ' aksesuar eski sezon depo stok toplamı
+                ag = Sayfa2.Cells(b, 6) 'aksesuar eski sezon reyok stok
+                ah = ah + ag 'aksesuar eski sezon reyon stok toplamı
+                b = b + 1
+            End If
+        ElseIf (Sayfa2.Cells(b, 4) = "OYUNCAK") Then
+            If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                ba = Sayfa2.Cells(b, 5) ' oyuncak yeni sezon depo stok
+                bb = bb + ba ' oyuncak yeni sezon depo stok toplamı
+                bc = Sayfa2.Cells(b, 6) 'oyuncak yeni sezon reyok stok
+                bd = bd + bc 'oyuncak yeni sezon reyon stok toplamı
+                b = b + 1
+            Else
+                be = Sayfa2.Cells(b, 5) ' oyuncak eski sezon depo stok
+                bf = bf + be ' oyuncak eski sezon depo stok toplamı
+                bg = Sayfa2.Cells(b, 6) 'oyuncak eski sezon reyok stok
+                bh = bh + bg 'oyuncak eski sezon reyon stok toplamı
+                b = b + 1
+            End If
+        ElseIf (Sayfa2.Cells(b, 4) = "ÇORAP") Then
+            If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                ca = Sayfa2.Cells(b, 5) ' çorap yeni sezon depo stok
+                cb = cb + ca ' çorap yeni sezon depo stok toplamı
+                cc = Sayfa2.Cells(b, 6) 'çorap yeni sezon reyok stok
+                cd = cd + cc 'çorap yeni sezon reyon stok toplamı
+                b = b + 1
+            Else
+                ce = Sayfa2.Cells(b, 5) ' çorap eski sezon depo stok
+                cf = cf + ce ' çorap eski sezon depo stok toplamı
+                cg = Sayfa2.Cells(b, 6) 'çorap eski sezon reyok stok
+                ch = ch + cg 'çorap eski sezon reyon stok toplamı
+                b = b + 1
+            End If
+        ElseIf (Sayfa2.Cells(b, 4) = "AYAKKABI") Then
+            If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                ea = Sayfa2.Cells(b, 5) ' ayakkabı yeni sezon depo stok
+                eb = eb + ea ' ayakkabı yeni sezon depo stok toplamı
+                ec = Sayfa2.Cells(b, 6) 'ayakkabı yeni sezon reyok stok
+                ed = ed + ec 'ayakkabı yeni sezon reyon stok toplamı
+                b = b + 1
+            Else
+                ee = Sayfa2.Cells(b, 5) ' ayakkabı eski sezon depo stok
+                ef = ef + ee ' ayakkabı eski sezon depo stok toplamı
+                eg = Sayfa2.Cells(b, 6) 'ayakkabı eski sezon reyok stok
+                eh = eh + eg 'ayakkabı eski sezon reyon stok toplamı
+                b = b + 1
+            End If
+        ElseIf (Sayfa2.Cells(b, 4) = "KOZMETİK" Or Sayfa2.Cells(b, 4) = "TEKSTİL DIŞI") Then
+            If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                If (Sayfa2.Cells(b, 5) = 0 And Sayfa2.Cells(b, 6) < 0) Then
+                    b = b + 1
+                Else
+                    fa = Sayfa2.Cells(b, 5) ' kozmetik yeni sezon depo stok
+                    fb = fb + fa ' kozmetik yeni sezon depo stok toplamı
+                    fc = Sayfa2.Cells(b, 6) ' kozmetik yeni sezon reyon stok
+                    fd = fd + fc ' kozmetik yeni sezon reyon stok toplamı
+                    b = b + 1
+                End If
+            Else
+                If (Sayfa2.Cells(b, 5) = 0 And Sayfa2.Cells(b, 6) < 0) Then
+                    b = b + 1
+                Else
+                    fe = Sayfa2.Cells(b, 5) ' kozmetik yeni sezon depo stok
+                    ff = ff + fe ' kozmetik eski sezon depo stok toplamı
+                    fg = Sayfa2.Cells(b, 6) ' kozmetik yeni sezon reyon stok
+                    fh = fh + fg ' kozmetik eski sezon reyon stok toplamı
+                    b = b + 1
+                End If
+            End If
+        Else
+            If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                ga = Sayfa2.Cells(b, 5) ' diğer(ürün) yeni sezon depo stok
+                gb = gb + ga ' diğer(ürün yeni sezon depo stok toplamı
+                gc = Sayfa2.Cells(b, 6) 'diğer(ürün yeni sezon reyok stok
+                gd = gd + gc 'diğer(ürün yeni sezon reyon stok toplamı
+                b = b + 1
+            Else
+                ge = Sayfa2.Cells(b, 5) ' diğer(ürün eski sezon depo stok
+                gf = gf + ge ' diğer(ürün eski sezon depo stok toplamı
+                gg = Sayfa2.Cells(b, 6) 'diğer(ürün eski sezon reyok stok
+                gh = gh + gg 'diğer(ürün eski sezon reyon stok toplamı
+                b = b + 1
+            End If
+         End If
+    ElseIf (Sayfa2.Cells(b, 1) = "BU") Then
+        If (Sayfa2.Cells(b, 4) = "AKSESUAR" Or Sayfa2.Cells(b, 4) = "BANYO" Or Sayfa2.Cells(b, 4) = "DERİ AKSESUAR" Or Sayfa2.Cells(b, 4) = "DOKUMA AKSESUAR" Or Sayfa2.Cells(b, 4) = "KRAVAT/PAPYON" Or Sayfa2.Cells(b, 4) = "SAÇ AKSESUAR" Or Sayfa2.Cells(b, 4) = "STANDART DIŞI" Or Sayfa2.Cells(b, 4) = "TRİKO ÖRME AKSESUAR") Then
+            If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                ha = Sayfa2.Cells(b, 5) ' aksesuar yeni sezon depo stok
+                hb = hb + ha ' aksesuar yeni sezon depo stok toplamı
+                hc = Sayfa2.Cells(b, 6) 'aksesuar yeni sezon reyok stok
+                hd = hd + hc 'aksesuar yeni sezon reyon stok toplamı
+                b = b + 1
+            Else
+                he = Sayfa2.Cells(b, 5) ' aksesuar eski sezon depo stok
+                hf = hf + he ' aksesuar eski sezon depo stok toplamı
+                hg = Sayfa2.Cells(b, 6) 'aksesuar eski sezon reyok stok
+                hh = hh + hg 'aksesuar eski sezon reyon stok toplamı
+                b = b + 1
+            End If
+        ElseIf (Sayfa2.Cells(b, 4) = "OYUNCAK") Then
+            If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                ıa = Sayfa2.Cells(b, 5) ' oyuncak yeni sezon depo stok
+                ıb = ıb + ıa ' oyuncak yeni sezon depo stok toplamı
+                ıc = Sayfa2.Cells(b, 6) 'oyuncak yeni sezon reyok stok
+                ıd = ıd + ıc 'oyuncak yeni sezon reyon stok toplamı
+                b = b + 1
+            Else
+                ıe = Sayfa2.Cells(b, 5) ' oyuncak eski sezon depo stok
+                ıf = ıf + ıe ' oyuncak eski sezon depo stok toplamı
+                ıg = Sayfa2.Cells(b, 6) 'oyuncak eski sezon reyok stok
+                ıh = ıh + ıg 'oyuncak eski sezon reyon stok toplamı
+                b = b + 1
+            End If
+        ElseIf (Sayfa2.Cells(b, 4) = "ÇORAP") Then
+            If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                ja = Sayfa2.Cells(b, 5) ' çorap yeni sezon depo stok
+                jb = jb + ja ' çorap yeni sezon depo stok toplamı
+                jc = Sayfa2.Cells(b, 6) 'çorap yeni sezon reyok stok
+                jd = jd + jc 'çorap yeni sezon reyon stok toplamı
+                b = b + 1
+            Else
+                je = Sayfa2.Cells(b, 5) ' çorap eski sezon depo stok
+                jf = jf + je ' çorap eski sezon depo stok toplamı
+                jg = Sayfa2.Cells(b, 6) 'çorap eski sezon reyok stok
+                jh = jh + jg 'çorap eski sezon reyon stok toplamı
+                b = b + 1
+            End If
+        ElseIf (Sayfa2.Cells(b, 4) = "AYAKKABI") Then
+            If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                ka = Sayfa2.Cells(b, 5) ' ayakkabı yeni sezon depo stok
+                kb = kb + ka ' ayakkabı yeni sezon depo stok toplamı
+                kc = Sayfa2.Cells(b, 6) 'ayakkabı yeni sezon reyok stok
+                kd = kd + kc 'ayakkabı yeni sezon reyon stok toplamı
+                b = b + 1
+            Else
+                ke = Sayfa2.Cells(b, 5) ' ayakkabı eski sezon depo stok
+                kf = kf + ke ' ayakkabı eski sezon depo stok toplamı
+                kg = Sayfa2.Cells(b, 6) 'ayakkabı eski sezon reyok stok
+                kh = kh + kg 'ayakkabı eski sezon reyon stok toplamı
+                b = b + 1
+            End If
+        ElseIf (Sayfa2.Cells(b, 4) = "KOZMETİK" Or Sayfa2.Cells(b, 4) = "TEKSTİL DIŞI") Then
+            If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                If (Sayfa2.Cells(b, 5) = 0 And Sayfa2.Cells(b, 6) < 0) Then
+                    b = b + 1
+                Else
+                    la = Sayfa2.Cells(b, 5) ' kozmetik yeni sezon depo stok
+                    lb = lb + la ' kozmetik yeni sezon depo stok toplamı
+                    lc = Sayfa2.Cells(b, 6) ' kozmetik yeni sezon reyon stok
+                    ld = ld + lc ' kozmetik yeni sezon reyon stok toplamı
+                    b = b + 1
+                End If
+            Else
+                If (Sayfa2.Cells(b, 5) = 0 And Sayfa2.Cells(b, 6) < 0) Then
+                    b = b + 1
+                Else
+                    le = Sayfa2.Cells(b, 5) ' kozmetik yeni sezon depo stok
+                    lf = lf + le ' kozmetik eski sezon depo stok toplamı
+                    lg = Sayfa2.Cells(b, 6) ' kozmetik yeni sezon reyon stok
+                    lh = lh + lg ' kozmetik eski sezon reyon stok toplamı
+                    b = b + 1
+                End If
+            End If
+        Else
+            If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                ma = Sayfa2.Cells(b, 5) ' diğer(ürün) yeni sezon depo stok
+                mb = mb + ma ' diğer(ürün yeni sezon depo stok toplamı
+                mc = Sayfa2.Cells(b, 6) 'diğer(ürün yeni sezon reyok stok
+                md = md + mc 'diğer(ürün yeni sezon reyon stok toplamı
+                b = b + 1
+            Else
+                mı = Sayfa2.Cells(b, 5) ' diğer(ürün eski sezon depo stok
+                mf = mf + mı ' diğer(ürün eski sezon depo stok toplamı
+                mg = Sayfa2.Cells(b, 6) 'diğer(ürün eski sezon reyok stok
+                mh = mh + mg 'diğer(ürün eski sezon reyon stok toplamı
+                b = b + 1
+            End If
+         End If
+    ElseIf (Sayfa2.Cells(b, 1) = "CK") Then
+        If (Sayfa2.Cells(b, 4) = "AKSESUAR" Or Sayfa2.Cells(b, 4) = "BANYO" Or Sayfa2.Cells(b, 4) = "DERİ AKSESUAR" Or Sayfa2.Cells(b, 4) = "DOKUMA AKSESUAR" Or Sayfa2.Cells(b, 4) = "KRAVAT/PAPYON" Or Sayfa2.Cells(b, 4) = "SAÇ AKSESUAR" Or Sayfa2.Cells(b, 4) = "STANDART DIŞI" Or Sayfa2.Cells(b, 4) = "TRİKO ÖRME AKSESUAR") Then
+            If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                na = Sayfa2.Cells(b, 5) ' aksesuar yeni sezon depo stok
+                nb = nb + na ' aksesuar yeni sezon depo stok toplamı
+                nc = Sayfa2.Cells(b, 6) 'aksesuar yeni sezon reyok stok
+                nd = nd + nc 'aksesuar yeni sezon reyon stok toplamı
+                b = b + 1
+            Else
+                ne = Sayfa2.Cells(b, 5) ' aksesuar eski sezon depo stok
+                nf = nf + ne ' aksesuar eski sezon depo stok toplamı
+                ng = Sayfa2.Cells(b, 6) 'aksesuar eski sezon reyok stok
+                nh = nh + ng 'aksesuar eski sezon reyon stok toplamı
+                b = b + 1
+            End If
+        ElseIf (Sayfa2.Cells(b, 4) = "OYUNCAK") Then
+            If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                oa = Sayfa2.Cells(b, 5) ' oyuncak yeni sezon depo stok
+                ob = ob + oa ' oyuncak yeni sezon depo stok toplamı
+                oc = Sayfa2.Cells(b, 6) 'oyuncak yeni sezon reyok stok
+                od = od + oc 'oyuncak yeni sezon reyon stok toplamı
+                b = b + 1
+            Else
+                oe = Sayfa2.Cells(b, 5) ' oyuncak eski sezon depo stok
+                of = of + oe ' oyuncak eski sezon depo stok toplamı
+                og = Sayfa2.Cells(b, 6) 'oyuncak eski sezon reyok stok
+                oh = oh + og 'oyuncak eski sezon reyon stok toplamı
+                b = b + 1
+            End If
+        ElseIf (Sayfa2.Cells(b, 4) = "ÇORAP") Then
+            If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                öa = Sayfa2.Cells(b, 5) ' çorap yeni sezon depo stok
+                öb = öb + öa ' çorap yeni sezon depo stok toplamı
+                öc = Sayfa2.Cells(b, 6) 'çorap yeni sezon reyok stok
+                öd = öd + öc 'çorap yeni sezon reyon stok toplamı
+                b = b + 1
+            Else
+                öe = Sayfa2.Cells(b, 5) ' çorap eski sezon depo stok
+                öf = öf + öe ' çorap eski sezon depo stok toplamı
+                ög = Sayfa2.Cells(b, 6) 'çorap eski sezon reyok stok
+                öh = öh + ög 'çorap eski sezon reyon stok toplamı
+                b = b + 1
+            End If
+        ElseIf (Sayfa2.Cells(b, 4) = "AYAKKABI") Then
+            If (Sayfa2.Cells(b, 2) = "CK4A ") Then
+                If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                    pa = Sayfa2.Cells(b, 5) ' ayakkabı yeni sezon depo stok
+                    pb = pb + pa ' ayakkabı yeni sezon depo stok toplamı
+                    pc = Sayfa2.Cells(b, 6) 'ayakkabı yeni sezon reyok stok
+                    pd = pd + pc 'ayakkabı yeni sezon reyon stok toplamı
+                    b = b + 1
+                Else
+                    pe = Sayfa2.Cells(b, 5) ' ayakkabı eski sezon depo stok
+                    pf = pf + pe ' ayakkabı eski sezon depo stok toplamı
+                    pg = Sayfa2.Cells(b, 6) 'ayakkabı eski sezon reyok stok
+                    ph = ph + pg 'ayakkabı eski sezon reyon stok toplamı
+                    b = b + 1
+                End If
+            Else
+                If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                    şa = Sayfa2.Cells(b, 5) ' ayakkabı yeni sezon depo stok
+                    şb = şb + şa ' ayakkabı yeni sezon depo stok toplamı
+                    şc = Sayfa2.Cells(b, 6) 'ayakkabı yeni sezon reyok stok
+                    şd = şd + şc 'ayakkabı yeni sezon reyon stok toplamı
+                    b = b + 1
+                Else
+                    şe = Sayfa2.Cells(b, 5) ' ayakkabı eski sezon depo stok
+                    şf = şf + şe ' ayakkabı eski sezon depo stok toplamı
+                    şg = Sayfa2.Cells(b, 6) 'ayakkabı eski sezon reyok stok
+                    şh = şh + şg 'ayakkabı eski sezon reyon stok toplamı
+                    b = b + 1
+                End If
+            End If
+        ElseIf (Sayfa2.Cells(b, 4) = "KOZMETİK" Or Sayfa2.Cells(b, 4) = "TEKSTİL DIŞI") Then
+            If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                If (Sayfa2.Cells(b, 5) = 0 And Sayfa2.Cells(b, 6) < 0) Then
+                    b = b + 1
+                Else
+                    Ra = Sayfa2.Cells(b, 5) ' kozmetik yeni sezon depo stok
+                    rb = rb + Ra ' kozmetik yeni sezon depo stok toplamı
+                    rc = Sayfa2.Cells(b, 6) ' kozmetik yeni sezon reyon stok
+                    rd = rd + rc ' kozmetik yeni sezon reyon stok toplamı
+                    b = b + 1
+                End If
+            Else
+                If (Sayfa2.Cells(b, 5) = 0 And Sayfa2.Cells(b, 6) < 0) Then
+                    b = b + 1
+                Else
+                    re = Sayfa2.Cells(b, 5) ' kozmetik yeni sezon depo stok
+                    rf = rf + re ' kozmetik eski sezon depo stok toplamı
+                    Rg = Sayfa2.Cells(b, 6) ' kozmetik yeni sezon reyon stok
+                    rh = rh + Rg ' kozmetik eski sezon reyon stok toplamı
+                    b = b + 1
+                End If
+            End If
+        Else
+            If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                sa = Sayfa2.Cells(b, 5) ' diğer(ürün) yeni sezon depo stok
+                sb = sb + sa ' diğer(ürün yeni sezon depo stok toplamı
+                sc = Sayfa2.Cells(b, 6) 'diğer(ürün yeni sezon reyok stok
+                sd = sd + sc 'diğer(ürün yeni sezon reyon stok toplamı
+                b = b + 1
+            Else
+                se = Sayfa2.Cells(b, 5) ' diğer(ürün eski sezon depo stok
+                sf = sf + se ' diğer(ürün eski sezon depo stok toplamı
+                sg = Sayfa2.Cells(b, 6) 'diğer(ürün eski sezon reyok stok
+                Sh = Sh + sg 'diğer(ürün eski sezon reyon stok toplamı
+                b = b + 1
+            End If
+         End If
+    ElseIf (Sayfa2.Cells(b, 1) = "CU") Then
+        If (Sayfa2.Cells(b, 4) = "AKSESUAR" Or Sayfa2.Cells(b, 4) = "BANYO" Or Sayfa2.Cells(b, 4) = "DERİ AKSESUAR" Or Sayfa2.Cells(b, 4) = "DOKUMA AKSESUAR" Or Sayfa2.Cells(b, 4) = "KRAVAT/PAPYON" Or Sayfa2.Cells(b, 4) = "SAÇ AKSESUAR" Or Sayfa2.Cells(b, 4) = "STANDART DIŞI" Or Sayfa2.Cells(b, 4) = "TRİKO ÖRME AKSESUAR") Then
+            If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                ta = Sayfa2.Cells(b, 5) ' aksesuar yeni sezon depo stok
+                tb = tb + ta ' aksesuar yeni sezon depo stok toplamı
+                tc = Sayfa2.Cells(b, 6) 'aksesuar yeni sezon reyok stok
+                td = td + tc 'aksesuar yeni sezon reyon stok toplamı
+                b = b + 1
+            Else
+                te = Sayfa2.Cells(b, 5) ' aksesuar eski sezon depo stok
+                tf = tf + te ' aksesuar eski sezon depo stok toplamı
+                tg = Sayfa2.Cells(b, 6) 'aksesuar eski sezon reyok stok
+                th = th + tg 'aksesuar eski sezon reyon stok toplamı
+                b = b + 1
+            End If
+        ElseIf (Sayfa2.Cells(b, 4) = "OYUNCAK") Then
+            If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                ua = Sayfa2.Cells(b, 5) ' oyuncak yeni sezon depo stok
+                ub = ub + ua ' oyuncak yeni sezon depo stok toplamı
+                uc = Sayfa2.Cells(b, 6) 'oyuncak yeni sezon reyok stok
+                ud = ud + uc 'oyuncak yeni sezon reyon stok toplamı
+                b = b + 1
+            Else
+                ue = Sayfa2.Cells(b, 5) ' oyuncak eski sezon depo stok
+                uf = uf + ue ' oyuncak eski sezon depo stok toplamı
+                ug = Sayfa2.Cells(b, 6) 'oyuncak eski sezon reyok stok
+                uh = uh + ug 'oyuncak eski sezon reyon stok toplamı
+                b = b + 1
+            End If
+        ElseIf (Sayfa2.Cells(b, 4) = "ÇORAP") Then
+            If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                üa = Sayfa2.Cells(b, 5) ' çorap yeni sezon depo stok
+                üb = üb + üa ' çorap yeni sezon depo stok toplamı
+                üc = Sayfa2.Cells(b, 6) 'çorap yeni sezon reyok stok
+                üd = üd + üc 'çorap yeni sezon reyon stok toplamı
+                b = b + 1
+            Else
+                üe = Sayfa2.Cells(b, 5) ' çorap eski sezon depo stok
+                üf = üf + üe ' çorap eski sezon depo stok toplamı
+                üg = Sayfa2.Cells(b, 6) 'çorap eski sezon reyok stok
+                üh = üh + üg 'çorap eski sezon reyon stok toplamı
+                b = b + 1
+            End If
+        ElseIf (Sayfa2.Cells(b, 4) = "AYAKKABI") Then
+            If (Sayfa2.Cells(b, 2) = "CU4A ") Then
+                If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                    va = Sayfa2.Cells(b, 5) ' ayakkabı yeni sezon depo stok
+                    vb = vb + va ' ayakkabı yeni sezon depo stok toplamı
+                    vc = Sayfa2.Cells(b, 6) 'ayakkabı yeni sezon reyok stok
+                    vd = vd + vc 'ayakkabı yeni sezon reyon stok toplamı
+                    b = b + 1
+                Else
+                    ve = Sayfa2.Cells(b, 5) ' ayakkabı eski sezon depo stok
+                    vf = vf + ve ' ayakkabı eski sezon depo stok toplamı
+                    vg = Sayfa2.Cells(b, 6) 'ayakkabı eski sezon reyok stok
+                    vh = vh + vg 'ayakkabı eski sezon reyon stok toplamı
+                    b = b + 1
+                End If
+            Else
+                If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                    ya = Sayfa2.Cells(b, 5) ' ayakkabı yeni sezon depo stok
+                    yb = yb + ya ' ayakkabı yeni sezon depo stok toplamı
+                    yc = Sayfa2.Cells(b, 6) 'ayakkabı yeni sezon reyok stok
+                    yd = yd + yc 'ayakkabı yeni sezon reyon stok toplamı
+                    b = b + 1
+                Else
+                    ye = Sayfa2.Cells(b, 5) ' ayakkabı eski sezon depo stok
+                    yf = yf + ye ' ayakkabı eski sezon depo stok toplamı
+                    yg = Sayfa2.Cells(b, 6) 'ayakkabı eski sezon reyok stok
+                    yh = yh + yg 'ayakkabı eski sezon reyon stok toplamı
+                    b = b + 1
+                End If
+            End If
+        ElseIf (Sayfa2.Cells(b, 4) = "KOZMETİK" Or Sayfa2.Cells(b, 4) = "TEKSTİL DIŞI") Then
+            If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                If (Sayfa2.Cells(b, 5) = 0 And Sayfa2.Cells(b, 6) < 0) Then
+                    b = b + 1
+                Else
+                    wa = Sayfa2.Cells(b, 5) ' kozmetik yeni sezon depo stok
+                    wb = wb + wa ' kozmetik yeni sezon depo stok toplamı
+                    wc = Sayfa2.Cells(b, 6) ' kozmetik yeni sezon reyon stok
+                    wd = wd + wc ' kozmetik yeni sezon reyon stok toplamı
+                    b = b + 1
+                End If
+            Else
+                If (Sayfa2.Cells(b, 5) = 0 And Sayfa2.Cells(b, 6) < 0) Then
+                    b = b + 1
+                Else
+                    we = Sayfa2.Cells(b, 5) ' kozmetik yeni sezon depo stok
+                    wf = wf + we ' kozmetik eski sezon depo stok toplamı
+                    wg = Sayfa2.Cells(b, 6) ' kozmetik yeni sezon reyon stok
+                    wh = wh + wg ' kozmetik eski sezon reyon stok toplamı
+                    b = b + 1
+                End If
+            End If
+        Else
+            If (Sayfa2.Cells(b, 3) = "9S    " Or Sayfa2.Cells(b, 3) = "9W    ") Then
+                za = Sayfa2.Cells(b, 5) ' diğer(ürün) yeni sezon depo stok
+                zb = zb + za ' diğer(ürün yeni sezon depo stok toplamı
+                zc = Sayfa2.Cells(b, 6) 'diğer(ürün yeni sezon reyok stok
+                zd = zd + zc 'diğer(ürün yeni sezon reyon stok toplamı
+                b = b + 1
+            Else
+                ze = Sayfa2.Cells(b, 5) ' diğer(ürün eski sezon depo stok
+                zf = zf + ze ' diğer(ürün eski sezon depo stok toplamı
+                zg = Sayfa2.Cells(b, 6) 'diğer(ürün eski sezon reyok stok
+                zh = zh + zg 'diğer(ürün eski sezon reyon stok toplamı
+                b = b + 1
+            End If
+         End If
+    Else
+    b = b + 1
+    End If
+Loop
+'BG
+Range("B22") = gb + gf 'bg depo stoğu
+Range("E22") = gb + gd + gf + gh 'bg tüm sezon stoğu
+Range("F22") = gb + gd 'bg yeni sezon stoğu
+Range("J22") = gd + gh 'bg reyon stoğu
+Range("E37") = eb + ef 'bg ayakkabı depo stoğu
+Range("F37") = ed + eh 'bg ayakkabı reyon stoğu
+Range("G37") = eb + ed 'bg ayakkabı yeni sezon stoğu
+Range("E50") = ab + af 'bg aksesuar depo stoğu
+Range("F50") = ad + ah 'bg aksesuar reyon stoğu
+Range("G50") = ab + ad 'bg aksesuar yeni sezon stoğu
+aaaa = cb + cf 'bg çorap depo stoğu
+aaab = cd + ch 'bg çorap reyon stoğu
+aaac = cb + cd 'bg çorap yeni sezon stoğu
+aaad = fb + ff 'bg kozmetik depo stoğu
+aaae = fd + fh 'bg kozmetik reyon stoğu
+aaaf = fb + fd 'bg kozmetik yeni sezon stoğu
+'BU
+Range("B23") = mb + mf 'bu depo stoğu
+Range("E23") = mb + md + mf + mh 'bu tüm sezon stoğu
+Range("F23") = mb + md 'bu yeni sezon stoğu
+Range("J23") = md + mh 'bu reyon stoğu
+Range("E38") = kb + kf 'bu ayakkabı depo stoğu
+Range("F38") = kd + kh 'bu ayakkabı reyon stoğu
+Range("G38") = kb + kd 'bu ayakkabı yeni sezon stoğu
+Range("E51") = hb + hf 'bu aksesuar depo stoğu
+Range("F51") = hd + hh 'bu aksesuar reyon stoğu
+Range("G51") = hb + hd 'bu aksesuar yeni sezon stoğu
+aaag = jb + jf 'bu çorap depo stoğu
+aaah = jd + jh 'bu çorap reyon stoğu
+aaaı = jb + jd 'bu çorap yeni sezon stoğu
+aaai = lb + lf 'bu kozmetik depo stoğu
+aaaj = ld + lh 'bu kozmetik reyon stoğu
+aaak = lb + ld 'bu kozmetik yeni sezon stoğu
+'CK
+Range("B24") = sb + sf 'ck depo stoğu
+Range("E24") = sb + sd + sf + Sh 'ck tüm sezon stoğu
+Range("F24") = sb + sd 'ck yeni sezon stoğu
+Range("J24") = sd + Sh 'ck reyon stoğu
+Range("E39") = pb + pf 'ck4 ayakkabı depo stoğu
+Range("F39") = pd + ph 'ck4 ayakkabı reyon stoğu
+Range("G39") = pb + pd 'ck4 ayakkabı yeni sezon stoğu
+Range("E40") = şb + şf 'ck1 ayakkabı depo stoğu
+Range("F40") = şd + şh 'ck1 ayakkabı reyon stoğu
+Range("G40") = şb + şd 'ck1 ayakkabı yeni sezon stoğu
+Range("E52") = nb + nf 'ck aksesuar depo stoğu
+Range("F52") = nd + nh 'ck aksesuar reyon stoğu
+Range("G52") = nb + nd 'ck aksesuar yeni sezon stoğu
+aaal = öb + öf 'ck çorap depo stoğu
+aaam = öd + öh 'ck çorap reyon stoğu
+aaan = öb + öd 'ck çorap yeni sezon stoğu
+aaao = rb + rf 'ck kozmetik depo stoğu
+aaaö = rd + rh 'ck kozmetik reyon stoğu
+aaap = rb + rd 'ck kozmetik yeni sezon stoğu
+aaar = ob + of 'ck oyuncak depo stoğu
+aaas = od + oh 'ck oyuncak reyon stoğu
+aaaş = ob + od 'ck oyuncak yeni sezon stoğu
+'CU
+Range("B25") = zb + zf 'cu depo stoğu
+Range("E25") = zb + zd + zf + zh 'cu tüm sezon stoğu
+Range("F25") = zb + zd 'cu yeni sezon stoğu
+Range("J25") = zd + zh 'cu reyon stoğu
+Range("E41") = vb + vf 'cu4 ayakkabı depo stoğu
+Range("F41") = vd + vh 'cu4 ayakkabı reyon stoğu
+Range("G41") = vb + vd 'cu4 ayakkabı yeni sezon stoğu
+Range("E42") = yb + yf 'cu1 ayakkabı depo stoğu
+Range("F42") = yd + yh 'cu1 ayakkabı reyon stoğu
+Range("G42") = yb + yd 'cu1 ayakkabı yeni sezon stoğu
+Range("E53") = tb + tf 'cu aksesuar depo stoğu
+Range("F53") = td + th 'cu aksesuar reyon stoğu
+Range("G53") = tb + td 'cu aksesuar yeni sezon stoğu
+aaat = üb + üf 'cu çorap depo stoğu
+aaau = üd + üh 'cu çorap reyon stoğu
+aaaü = üb + üd 'cu çorap yeni sezon stoğu
+aaav = wb + wf 'cu kozmetik depo stoğu
+aaaw = wd + wh 'cu kozmetik reyon stoğu
+aaax = wb + wd 'cu kozmetik yeni sezon stoğu
+aaay = ub + uf 'cu oyuncak depo stoğu
+aaaz = ud + uh 'cu oyuncak reyon stoğu
+aaağ = ub + ud 'cu oyuncak yeni sezon stoğu
+ 'GÜNCEL DEPO STOĞU
+Range("B26") = aaaa + aaag + aaal + aaat 'çorap depo stoğu
+Range("B27") = aaad + aaai + aaao + aaav 'kozmetik depo stoğu
+Range("B28") = aaar + aaay 'oyuncak depo stoğu
+ 'GÜNCEL REYON STOĞU
+Range("J26") = aaab + aaah + aaam + aaau 'çorap reyon stoğu
+Range("J27") = aaae + aaaj + aaaö + aaaw 'kozmetik reyon stoğu
+Range("J28") = aaas + aaaz 'oyuncak reyon stoğu
+ 'BÜTÜN SEZONLAR
+Range("E26") = Range("B26") + Range("J26") 'çorap tüm sezon
+Range("E27") = Range("B27") + Range("J27") 'kozmetik tüm sezon
+Range("E28") = Range("B28") + Range("J28") 'oyuncak tüm sezon
+ 'YENİ SEZON
+Range("F26") = aaac + aaaı + aaan + aaaü 'yeni sezon çorap
+Range("F27") = aaaf + aaak + aaap + aaax 'yeni sezon kozmetik
+Range("F28") = aaaş + aaağ 'yeni sezon oyuncak
+'TOPLAM
+Range("B29") = Range("B22") + Range("B23") + Range("B24") + Range("B25") + Range("B26") + Range("B27") + Range("B28") 'güncel depo stoğu
+Range("E29") = Range("E22") + Range("E23") + Range("E24") + Range("E25") + Range("E26") + Range("E27") + Range("E28") 'bütün sezonlar
+Range("F29") = Range("F22") + Range("F23") + Range("F24") + Range("F25") + Range("F26") + Range("F27") + Range("F28") 'yeni sezonlar
+Range("J29") = Range("J22") + Range("J23") + Range("J24") + Range("J25") + Range("J26") + Range("J27") + Range("J28") 'güncel reyon stoğu
+Range("E43") = Range("E37") + Range("E38") + Range("E39") + Range("E40") + Range("E41") + Range("E42") 'ayakkabı depo stoğu
+Range("F43") = Range("F37") + Range("F38") + Range("F39") + Range("F40") + Range("F41") + Range("F42") 'ayakkabı reyon stoğu
+Range("G43") = Range("G37") + Range("G38") + Range("G39") + Range("G40") + Range("G41") + Range("G42") 'ayakkabı yeni sezon stoğu
+Range("E54") = Range("E50") + Range("E51") + Range("E52") + Range("E53") 'aksesuar depo stoğu
+Range("F54") = Range("F50") + Range("F51") + Range("F52") + Range("F53") 'aksesuar reyon stoğu
+Range("G54") = Range("G50") + Range("G51") + Range("G52") + Range("G53") 'aksesuar yeni sezon stoğu
+'YENİ SEZON ORANLARI
+Range("H37") = "%" & Round((100 * (Range("G37"))) / (Range("E37") + Range("F37") + 0.00000001), 0) 'bg ayakkabı yeni sezon oranı
+Range("H38") = "%" & Round((100 * (Range("G38"))) / (Range("E38") + Range("F38") + 0.00000001), 0) 'bu ayakkabı yeni sezon oranı
+Range("H39") = "%" & Round((100 * (Range("G39"))) / (Range("E39") + Range("F39") + 0.00000001), 0) 'ck4 ayakkabı yeni sezon oranı
+Range("H40") = "%" & Round((100 * (Range("G40"))) / (Range("E40") + Range("F40") + 0.00000001), 0) 'ck1 ayakkabı yeni sezon oranı
+Range("H41") = "%" & Round((100 * (Range("G41"))) / (Range("E41") + Range("F41") + 0.00000001), 0)  'cu4 ayakkabı yeni sezon oranı
+Range("H42") = "%" & Round((100 * (Range("G42"))) / (Range("E42") + Range("F42") + 0.00000001), 0) 'cu1 ayakkabı yeni sezon oranı
+Range("H50") = "%" & Round((100 * (Range("G50"))) / (Range("E50") + Range("F50") + 0.00000001), 0)  'bg aksesuar yeni sezon oranı
+Range("H51") = "%" & Round((100 * (Range("G51"))) / (Range("E51") + Range("F51") + 0.00000001), 0) 'bu aksesuar yeni sezon oranı
+Range("H52") = "%" & Round((100 * (Range("G52"))) / (Range("E52") + Range("F52") + 0.00000001), 0)  'ck aksesuar yeni sezon oranı
+Range("H53") = "%" & Round((100 * (Range("G53"))) / (Range("E53") + Range("F53") + 0.00000001), 0) 'cu aksesuar yeni sezon oranı
+Range("G22") = "%" & Round((100 * (Range("F22"))) / (Range("E22") + 0.00000001), 0) ' bg yeni sezon oranı
+Range("G23") = "%" & Round((100 * (Range("F23"))) / (Range("E23") + 0.00000001), 0) ' bu yeni sezon oranı
+Range("G24") = "%" & Round((100 * (Range("F24"))) / (Range("E24") + 0.00000001), 0) ' ck yeni sezon oranı
+Range("G25") = "%" & Round((100 * (Range("F25"))) / (Range("E25") + 0.00000001), 0) ' cu yeni sezon oranı
+Range("G26") = "%" & Round((100 * (Range("F26"))) / (Range("E26") + 0.00000001), 0) ' çorap yeni sezon oranı
+Range("G27") = "%" & Round((100 * (Range("F27"))) / (Range("E27") + 0.00000001), 0) ' kozmetik yeni sezon oranı
+Range("G28") = "%" & Round((100 * (Range("F28"))) / (Range("E28") + 0.00000001), 0) ' oyuncak yeni sezon oranı
+Range("G29") = "%" & Round((100 * (Range("F29"))) / (Range("E29") + 0.00000001), 0) 'yeni sezon oranı
+Range("H43") = "%" & Round((100 * (Range("G43"))) / (Range("E43") + Range("F43") + 0.00000001), 0) 'ayakkabı yeni sezon oranı
+Range("H54") = "%" & Round((100 * (Range("G54"))) / (Range("E54") + Range("F54") + 0.00000001), 0) 'aksesuar yeni sezon oranı
+'GELEN SEVKİYAT
+Do While (Sayfa3.Cells(a, 1) > 0)
+    If (Sayfa3.Cells(a, 1) = "BG") Then
+        If (Sayfa3.Cells(a, 4) = "AKSESUAR" Or Sayfa3.Cells(a, 4) = "BANYO" Or Sayfa3.Cells(a, 4) = "DERİ AKSESUAR" Or Sayfa3.Cells(a, 4) = "DOKUMA AKSESUAR" Or Sayfa3.Cells(a, 4) = "KRAVAT/PAPYON" Or Sayfa3.Cells(a, 4) = "SAÇ AKSESUAR" Or Sayfa3.Cells(a, 4) = "STANDART DIŞI" Or Sayfa3.Cells(a, 4) = "TRİKO ÖRME AKSESUAR") Then
+                aae = Sayfa3.Cells(a, 3) ' aksesuar gelen
+                aaf = aaf + aae ' aksesuar gelen toplamı
+                a = a + 1
+        ElseIf (Sayfa3.Cells(a, 4) = "OYUNCAK") Then
+                bae = Sayfa3.Cells(a, 3) ' oyuncak gelen
+                baf = baf + bae ' oyuncak gelen toplamı
+                a = a + 1
+        ElseIf (Sayfa3.Cells(a, 4) = "ÇORAP") Then
+                cae = Sayfa3.Cells(a, 3) ' çorap gelen
+                caf = caf + cae ' çorap gelen toplamı
+                a = a + 1
+        ElseIf (Sayfa3.Cells(a, 4) = "AYAKKABI") Then
+                dae = Sayfa3.Cells(a, 3) ' ayakkabı gelen
+                daf = daf + dae ' ayakkabı gelen toplamı
+                a = a + 1
+        ElseIf (Sayfa3.Cells(a, 4) = "KOZMETİK" Or Sayfa3.Cells(a, 4) = "TEKSTİL DIŞI") Then
+                eae = Sayfa3.Cells(a, 3) ' kozmetik gelen
+                eaf = eaf + eae ' kozmetik gelen toplamı
+                a = a + 1
+        Else
+                fae = Sayfa3.Cells(a, 3) ' bg gelen
+                faf = faf + fae ' bg gelen toplamı
+                a = a + 1
+         End If
+    ElseIf (Sayfa3.Cells(a, 1) = "BU") Then
+        If (Sayfa3.Cells(a, 4) = "AKSESUAR" Or Sayfa3.Cells(a, 4) = "BANYO" Or Sayfa3.Cells(a, 4) = "DERİ AKSESUAR" Or Sayfa3.Cells(a, 4) = "DOKUMA AKSESUAR" Or Sayfa3.Cells(a, 4) = "KRAVAT/PAPYON" Or Sayfa3.Cells(a, 4) = "SAÇ AKSESUAR" Or Sayfa3.Cells(a, 4) = "STANDART DIŞI" Or Sayfa3.Cells(a, 4) = "TRİKO ÖRME AKSESUAR") Then
+                gae = Sayfa3.Cells(a, 3) ' aksesuar gelen
+                gaf = gaf + gae ' aksesuar gelen toplamı
+                a = a + 1
+        ElseIf (Sayfa3.Cells(a, 4) = "OYUNCAK") Then
+                hae = Sayfa3.Cells(a, 3) ' oyuncak gelen
+                haf = haf + hae ' oyuncak gelen toplamı
+                a = a + 1
+        ElseIf (Sayfa3.Cells(a, 4) = "ÇORAP") Then
+                ıae = Sayfa3.Cells(a, 3) ' çorap gelen
+                ıaf = ıaf + ıae ' çorap gelen toplamı
+                a = a + 1
+        ElseIf (Sayfa3.Cells(a, 4) = "AYAKKABI") Then
+                iae = Sayfa3.Cells(a, 3) ' ayakkabı gelen
+                iaf = iaf + iae ' ayakkabı gelen toplamı
+                a = a + 1
+        ElseIf (Sayfa3.Cells(a, 4) = "KOZMETİK" Or Sayfa3.Cells(a, 4) = "TEKSTİL DIŞI") Then
+                jae = Sayfa3.Cells(a, 3) ' kozmetik gelen
+                jaf = jaf + jae ' kozmetik gelen toplamı
+                a = a + 1
+        Else
+                kae = Sayfa3.Cells(a, 3) ' bu gelen
+                kaf = kaf + kae ' bu gelen toplamı
+                a = a + 1
+         End If
+    ElseIf (Sayfa3.Cells(a, 1) = "CK") Then
+        If (Sayfa3.Cells(a, 4) = "AKSESUAR" Or Sayfa3.Cells(a, 4) = "BANYO" Or Sayfa3.Cells(a, 4) = "DERİ AKSESUAR" Or Sayfa3.Cells(a, 4) = "DOKUMA AKSESUAR" Or Sayfa3.Cells(a, 4) = "KRAVAT/PAPYON" Or Sayfa3.Cells(a, 4) = "SAÇ AKSESUAR" Or Sayfa3.Cells(a, 4) = "STANDART DIŞI" Or Sayfa3.Cells(a, 4) = "TRİKO ÖRME AKSESUAR") Then
+                lae = Sayfa3.Cells(a, 3) ' aksesuar gelen
+                laf = laf + lae ' aksesuar gelen toplamı
+                a = a + 1
+        ElseIf (Sayfa3.Cells(a, 4) = "OYUNCAK") Then
+                mae = Sayfa3.Cells(a, 3) ' oyuncak gelen
+                maf = maf + mae ' oyuncak gelen toplamı
+                a = a + 1
+        ElseIf (Sayfa3.Cells(a, 4) = "ÇORAP") Then
+                nae = Sayfa3.Cells(a, 3) ' çorap gelen
+                naf = naf + nae ' çorap gelen toplamı
+                a = a + 1
+        ElseIf (Sayfa3.Cells(a, 4) = "AYAKKABI") Then
+                If (Sayfa3.Cells(a, 2) = "CK4A ") Then
+                    oae = Sayfa3.Cells(a, 3) ' ayakkabı ck4 gelen
+                    oaf = oaf + oae ' ayakkabı ck4 gelen toplamı
+                    a = a + 1
+                Else
+                    öae = Sayfa3.Cells(a, 3) ' ayakkabı ck1 gelen
+                    öaf = öaf + öae ' ayakkabı ck1 gelen toplamı
+                    a = a + 1
+                End If
+        ElseIf (Sayfa3.Cells(a, 4) = "KOZMETİK" Or Sayfa3.Cells(a, 4) = "TEKSTİL DIŞI") Then
+                pae = Sayfa3.Cells(a, 3) ' kozmetik gelen
+                paf = paf + pae ' kozmetik gelen toplamı
+                a = a + 1
+        Else
+                rae = Sayfa3.Cells(a, 3) ' ck gelen
+                raf = raf + rae ' ck gelen toplamı
+                a = a + 1
+         End If
+    ElseIf (Sayfa3.Cells(a, 1) = "CU") Then
+        If (Sayfa3.Cells(a, 4) = "AKSESUAR" Or Sayfa3.Cells(a, 4) = "BANYO" Or Sayfa3.Cells(a, 4) = "DERİ AKSESUAR" Or Sayfa3.Cells(a, 4) = "DOKUMA AKSESUAR" Or Sayfa3.Cells(a, 4) = "KRAVAT/PAPYON" Or Sayfa3.Cells(a, 4) = "SAÇ AKSESUAR" Or Sayfa3.Cells(a, 4) = "STANDART DIŞI" Or Sayfa3.Cells(a, 4) = "TRİKO ÖRME AKSESUAR") Then
+                sae = Sayfa3.Cells(a, 3) ' aksesuar gelen
+                saf = saf + sae ' aksesuar gelen toplamı
+                a = a + 1
+        ElseIf (Sayfa3.Cells(a, 4) = "OYUNCAK") Then
+                şae = Sayfa3.Cells(a, 3) ' oyuncak gelen
+                şaf = şaf + şae ' oyuncak gelen toplamı
+                a = a + 1
+        ElseIf (Sayfa3.Cells(a, 4) = "ÇORAP") Then
+                tae = Sayfa3.Cells(a, 3) ' çorap gelen
+                taf = taf + tae ' çorap gelen toplamı
+                a = a + 1
+        ElseIf (Sayfa3.Cells(a, 4) = "AYAKKABI") Then
+                If (Sayfa3.Cells(a, 2) = "CU4A ") Then
+                    uae = Sayfa3.Cells(a, 3) ' ayakkabı ck4 gelen
+                    uaf = uaf + uae ' ayakkabı ck4 gelen toplamı
+                    a = a + 1
+                Else
+                    üae = Sayfa3.Cells(a, 3) ' ayakkabı ck1 gelen
+                    üaf = üaf + üae ' ayakkabı ck1 gelen toplamı
+                    a = a + 1
+                End If
+        ElseIf (Sayfa3.Cells(a, 4) = "KOZMETİK" Or Sayfa3.Cells(a, 4) = "TEKSTİL DIŞI") Then
+                vae = Sayfa3.Cells(a, 3) ' kozmetik gelen
+                vaf = vaf + vae ' kozmetik gelen toplamı
+                a = a + 1
+        Else
+                yae = Sayfa3.Cells(a, 3) ' cu gelen
+                yaf = yaf + yae ' cu gelen toplamı
+                a = a + 1
+        End If
+    Else
+        a = a + 1
+    End If
+Loop
+Range("B7") = faf 'bg gelen
+Range("B8") = kaf 'bu gelen
+Range("B9") = raf 'ck gelen
+Range("B10") = yaf 'cu gelen
+Range("B11") = caf + ıaf + naf + taf 'çorap gelen
+Range("B12") = eaf + jaf + paf + vaf 'kozmetik gelen
+Range("B13") = baf + haf + maf + şaf 'oyuncak gelen
+Range("B14") = Range("B7") + Range("B8") + Range("B9") + Range("B10") + Range("B11") + Range("B12") + Range("B13") 'toplam gelen
+Range("B37") = daf 'bg ayakkabı gelen
+Range("B38") = iaf 'bu ayakkabı gelen
+Range("B39") = oaf 'ck4 ayakkabı gelen
+Range("B40") = öaf 'ck1 ayakkabı gelen
+Range("B41") = uaf 'cu4 ayakkabı gelen
+Range("B42") = üaf 'cu1 ayakkabı gelen
+Range("B43") = Range("B37") + Range("B38") + Range("B39") + Range("B40") + Range("B41") + Range("B42") 'gelen ayakkabı toplamı
+Range("B50") = aaf 'bg aksesuar gelen
+Range("B51") = gaf 'bu aksesuar gelen
+Range("B52") = laf 'ck aksesuar gelen
+Range("B53") = saf 'cu aksesuar gelen
+Range("B54") = Range("B50") + Range("B51") + Range("B52") + Range("B53")
+'REYON İNDİRİN ORANLARI
+Do While (Sayfa4.Cells(c, 1) > 0)
+    If (Sayfa4.Cells(c, 1) = "BG" And Sayfa4.Cells(c, 5) = "KIRMIZI") Then
+        If (Sayfa4.Cells(c, 3) = "AKSESUAR" Or Sayfa4.Cells(c, 3) = "BANYO" Or Sayfa4.Cells(c, 3) = "DERİ AKSESUAR" Or Sayfa4.Cells(c, 3) = "DOKUMA AKSESUAR" Or Sayfa4.Cells(c, 3) = "KRAVAT/PAPYON" Or Sayfa4.Cells(c, 3) = "SAÇ AKSESUAR" Or Sayfa4.Cells(c, 3) = "STANDART DIŞI" Or Sayfa4.Cells(c, 3) = "TRİKO ÖRME AKSESUAR") Then
+                abe = Sayfa4.Cells(c, 4) ' aksesuar reyon indirim
+                abf = abf + abe ' aksesuar reyon indirim toplamı
+                c = c + 1
+        ElseIf (Sayfa4.Cells(c, 3) = "OYUNCAK") Then
+                bbe = Sayfa4.Cells(c, 4) ' oyuncak reyon indirim
+                bbf = bbf + bbe ' oyuncak reyon indirim toplamı
+                c = c + 1
+        ElseIf (Sayfa4.Cells(c, 3) = "ÇORAP") Then
+                cbe = Sayfa4.Cells(c, 4) ' çorap reyon indirim
+                cbf = cbf + cbe ' çorap reyon indirim toplamı
+                c = c + 1
+        ElseIf (Sayfa4.Cells(c, 3) = "AYAKKABI") Then
+                dbe = Sayfa4.Cells(c, 4) ' ayakkabı reyon indirim
+                dbf = dbf + dbe ' ayakkabı reyon indirim toplamı
+                c = c + 1
+        ElseIf (Sayfa4.Cells(c, 3) = "KOZMETİK" Or Sayfa4.Cells(c, 3) = "TEKSTİL DIŞI") Then
+                ebe = Sayfa4.Cells(c, 4) ' kozmetik reyon indirim
+                ebf = ebf + ebe ' kozmetik reyon indirim toplamı
+                c = c + 1
+        Else
+                fbe = Sayfa4.Cells(c, 4) ' bg gelen
+                fbf = fbf + fbe ' bg reyon indirim toplamı
+                c = c + 1
+         End If
+    ElseIf (Sayfa4.Cells(c, 1) = "BU" And Sayfa4.Cells(c, 5) = "KIRMIZI") Then
+          If (Sayfa4.Cells(c, 3) = "AKSESUAR" Or Sayfa4.Cells(c, 3) = "BANYO" Or Sayfa4.Cells(c, 3) = "DERİ AKSESUAR" Or Sayfa4.Cells(c, 3) = "DOKUMA AKSESUAR" Or Sayfa4.Cells(c, 3) = "KRAVAT/PAPYON" Or Sayfa4.Cells(c, 3) = "SAÇ AKSESUAR" Or Sayfa4.Cells(c, 3) = "STANDART DIŞI" Or Sayfa4.Cells(c, 3) = "TRİKO ÖRME AKSESUAR") Then
+                gbe = Sayfa4.Cells(c, 4) ' aksesuar indirim
+                gbf = gbf + gbe ' aksesuar indirim toplamı
+                c = c + 1
+        ElseIf (Sayfa4.Cells(c, 3) = "OYUNCAK") Then
+                hbe = Sayfa4.Cells(c, 4) ' oyuncak indirim
+                hbf = hbf + hbe ' oyuncak indirim toplamı
+                c = c + 1
+        ElseIf (Sayfa4.Cells(c, 3) = "ÇORAP") Then
+                ıbe = Sayfa4.Cells(c, 4) ' çorap indirim
+                ıbf = ıbf + ıbe ' çorap indirim toplamı
+                c = c + 1
+        ElseIf (Sayfa4.Cells(c, 3) = "AYAKKABI") Then
+                ibe = Sayfa4.Cells(c, 4) ' ayakkabı indirim
+                ibf = ibf + ibe ' ayakkabı indirim toplamı
+                c = c + 1
+        ElseIf (Sayfa4.Cells(c, 3) = "KOZMETİK" Or Sayfa4.Cells(c, 3) = "TEKSTİL DIŞI") Then
+                jbe = Sayfa4.Cells(c, 4) ' kozmetik indirim
+                jbf = jbf + jbe ' kozmetik indirim toplamı
+                c = c + 1
+        Else
+                kbe = Sayfa4.Cells(c, 4) ' bu indirim
+                kbf = kbf + kbe ' bu indirim toplamı
+                c = c + 1
+         End If
+    ElseIf (Sayfa4.Cells(c, 1) = "CK" And Sayfa4.Cells(c, 5) = "KIRMIZI") Then
+          If (Sayfa4.Cells(c, 3) = "AKSESUAR" Or Sayfa4.Cells(c, 3) = "BANYO" Or Sayfa4.Cells(c, 3) = "DERİ AKSESUAR" Or Sayfa4.Cells(c, 3) = "DOKUMA AKSESUAR" Or Sayfa4.Cells(c, 3) = "KRAVAT/PAPYON" Or Sayfa4.Cells(c, 3) = "SAÇ AKSESUAR" Or Sayfa4.Cells(c, 3) = "STANDART DIŞI" Or Sayfa4.Cells(c, 3) = "TRİKO ÖRME AKSESUAR") Then
+                lbe = Sayfa4.Cells(c, 4) ' aksesuar indirim
+                lbf = lbf + lbe ' aksesuar indirim toplamı
+                c = c + 1
+        ElseIf (Sayfa4.Cells(c, 3) = "OYUNCAK") Then
+                mbe = Sayfa4.Cells(c, 4) ' oyuncak indirim
+                mbf = mbf + mbe ' oyuncak indirim toplamı
+                c = c + 1
+        ElseIf (Sayfa4.Cells(c, 3) = "ÇORAP") Then
+                nbe = Sayfa4.Cells(c, 4) ' çorap indirim
+                nbf = nbf + nbe ' çorap indirim toplamı
+                c = c + 1
+        ElseIf (Sayfa4.Cells(c, 3) = "AYAKKABI") Then
+                If (Sayfa4.Cells(c, 2) = "CK4A ") Then
+                    obe = Sayfa4.Cells(c, 4) ' ayakkabı ck4 indirim
+                    obf = obf + obe ' ayakkabı ck4 indirim toplamı
+                    c = c + 1
+                Else
+                    öbe = Sayfa4.Cells(c, 4) ' ayakkabı ck1 indirim
+                    öbf = öbf + öbe ' ayakkabı ck1 indirim toplamı
+                    c = c + 1
+                End If
+        ElseIf (Sayfa4.Cells(c, 3) = "KOZMETİK" Or Sayfa4.Cells(c, 3) = "TEKSTİL DIŞI") Then
+                pbe = Sayfa4.Cells(c, 4) ' kozmetik indirim
+                pbf = pbf + pbe ' kozmetik indirim toplamı
+                c = c + 1
+        Else
+                rbe = Sayfa4.Cells(c, 4) ' ck indirim
+                rbf = rbf + rbe ' ck indirim toplamı
+                c = c + 1
+         End If
+    ElseIf (Sayfa4.Cells(c, 1) = "CU" And Sayfa4.Cells(c, 5) = "KIRMIZI") Then
+          If (Sayfa4.Cells(c, 3) = "AKSESUAR" Or Sayfa4.Cells(c, 3) = "BANYO" Or Sayfa4.Cells(c, 3) = "DERİ AKSESUAR" Or Sayfa4.Cells(c, 3) = "DOKUMA AKSESUAR" Or Sayfa4.Cells(c, 3) = "KRAVAT/PAPYON" Or Sayfa4.Cells(c, 3) = "SAÇ AKSESUAR" Or Sayfa4.Cells(c, 3) = "STANDART DIŞI" Or Sayfa4.Cells(c, 3) = "TRİKO ÖRME AKSESUAR") Then
+                sbe = Sayfa4.Cells(c, 4) ' aksesuar indirim
+                sbf = sbf + sbe ' aksesuar indirim toplamı
+                c = c + 1
+        ElseIf (Sayfa4.Cells(c, 3) = "OYUNCAK") Then
+                şbe = Sayfa4.Cells(c, 4) ' oyuncak indirim
+                şbf = şbf + şbe ' oyuncak indirim toplamı
+                c = c + 1
+        ElseIf (Sayfa4.Cells(c, 3) = "ÇORAP") Then
+                tbe = Sayfa4.Cells(c, 4) ' çorap indirim
+                tbf = tbf + tbe ' çorap indirim toplamı
+                c = c + 1
+        ElseIf (Sayfa4.Cells(c, 3) = "AYAKKABI") Then
+                If (Sayfa4.Cells(c, 2) = "CU4A ") Then
+                    ube = Sayfa4.Cells(c, 4) ' ayakkabı ck4 indirim
+                    ubf = ubf + ube ' ayakkabı ck4 indirim toplamı
+                    c = c + 1
+                Else
+                    übe = Sayfa4.Cells(c, 4) ' ayakkabı ck1 indirim
+                    übf = übf + übe ' ayakkabı ck1 indirim toplamı
+                    c = c + 1
+                End If
+        ElseIf (Sayfa4.Cells(c, 3) = "KOZMETİK" Or Sayfa4.Cells(c, 3) = "TEKSTİL DIŞI") Then
+                vke = Sayfa4.Cells(c, 4) ' kozmetik indirim
+                vbf = vbf + vke ' kozmetik indirim toplamı
+                c = c + 1
+        Else
+                ybe = Sayfa4.Cells(c, 4) ' cu indirim
+                ybf = ybf + ybe ' cu indirim toplamı
+                c = c + 1
+        End If
+    Else
+        c = c + 1
+    End If
+Loop
+Range("F60") = fbf 'bg indirim
+Range("F61") = kbf 'bu indirim
+Range("F62") = rbf 'ck indirim
+Range("F63") = ybf 'cu indirim
+Range("F64") = cbf + ıbf + nbf + tbf 'çorap indirim
+Range("F65") = ebf + jbf + pbf + vbf 'kozmetik indirim
+Range("F66") = bbf + hbf + mbf + şbf 'oyuncak indirim
+Range("F67") = Range("F60") + Range("F61") + Range("F62") + Range("F63") + Range("F64") + Range("F65") + Range("F66") 'toplam indirim
+Range("I37") = dbf 'bg ayakkabı indirim
+Range("I38") = ibf 'bu ayakkabı indirim
+Range("I39") = obf 'ck4 ayakkabı indirim
+Range("I40") = öbf 'ck1 ayakkabı indirim
+Range("I41") = ubf 'cu4 ayakkabı indirim
+Range("I42") = übf 'cu1 ayakkabı indirim
+Range("I43") = Range("I37") + Range("I38") + Range("I39") + Range("I40") + Range("I41") + Range("I42") 'indirim ayakkabı toplamı
+Range("I50") = abf 'bg aksesuar indirim
+Range("I51") = gbf 'bu aksesuar indirim
+Range("I52") = lbf 'ck aksesuar indirim
+Range("I53") = sbf 'cu aksesuar indirim
+Range("I54") = Range("I50") + Range("I51") + Range("I52") + Range("I53")
+Range("E60") = Range("E22")
+Range("E61") = Range("E23")
+Range("E62") = Range("E24")
+Range("E63") = Range("E25")
+Range("E64") = Range("E26")
+Range("E65") = Range("E27")
+Range("E66") = Range("E28")
+Range("E67") = Range("E29")
+Range("G60") = "%" & Round((100 * (Range("F60"))) / (Range("E60") + 0.00000001), 0) 'bg indirimli stok oranı
+Range("G61") = "%" & Round((100 * (Range("F61"))) / (Range("E61") + 0.00000001), 0) 'bu indirimli stok oranı
+Range("G62") = "%" & Round((100 * (Range("F62"))) / (Range("E62") + 0.00000001), 0) 'ck indirimli stok oranı
+Range("G63") = "%" & Round((100 * (Range("F63"))) / (Range("E63") + 0.00000001), 0) 'cu indirimli stok oranı
+Range("G64") = "%" & Round((100 * (Range("F64"))) / (Range("E64") + 0.00000001), 0) 'çorap indirimli stok oranı
+Range("G65") = "%" & Round((100 * (Range("F65"))) / (Range("E65") + 0.00000001), 0) 'kozmetik indirimli stok oranı
+Range("G66") = "%" & Round((100 * (Range("F66"))) / (Range("E66") + 0.00000001), 0) 'oyuncak indirimli stok oranı
+Range("G67") = "%" & Round((100 * (Range("F67"))) / (Range("E67") + 0.00000001), 0) 'indirimli stok oranı
+Range("J50") = "%" & Round((100 * (Range("I50"))) / (Range("F50") + Range("E50") + 0.00000001), 0) 'bg aks indirimli stok oranı
+Range("J51") = "%" & Round((100 * (Range("I51"))) / (Range("F51") + Range("E51") + 0.00000001), 0) 'bu aks indirimli stok oranı
+Range("J52") = "%" & Round((100 * (Range("I52"))) / (Range("F52") + Range("E52") + 0.00000001), 0) 'ck aks stok oranı
+Range("J53") = "%" & Round((100 * (Range("I53"))) / (Range("F53") + Range("E53") + 0.00000001), 0) 'cu aks stok oranı
+Range("J54") = "%" & Round((100 * (Range("I54"))) / (Range("F54") + Range("E54") + 0.00000001), 0) 'indirimli aks stok oranı
+Range("J37") = "%" & Round((100 * (Range("I37"))) / (Range("F37") + Range("E37") + 0.00000001), 0) 'bga indirimli stok oranı
+Range("J38") = "%" & Round((100 * (Range("I38"))) / (Range("F38") + Range("E38") + 0.00000001), 0) 'bua indirimli stok oranı
+Range("J39") = "%" & Round((100 * (Range("I39"))) / (Range("F39") + Range("E39") + 0.00000001), 0) 'ck4a stok oranı
+Range("J40") = "%" & Round((100 * (Range("I40"))) / (Range("F40") + Range("E40") + 0.00000001), 0) 'ck1a stok oranı
+Range("J41") = "%" & Round((100 * (Range("I41"))) / (Range("F41") + Range("E41") + 0.00000001), 0) 'cu4a stok oranı
+Range("J42") = "%" & Round((100 * (Range("I42"))) / (Range("F42") + Range("E42") + 0.00000001), 0) 'cu1a indirimli stok oranı
+Range("J43") = "%" & Round((100 * (Range("I43"))) / (Range("F43") + Range("E43") + 0.00000001), 0) 'indirimli ayk stok oranı
+'ÇEKİLEN ÜRÜN
+Do While (Sayfa5.Cells(d, 1) > 0)
+    If (Left(Sayfa5.Cells(d, 1), 2) = "BG") Then
+        If (Left(Sayfa5.Cells(d, 2), 3) = "BGA") Then
+            dce = Sayfa5.Cells(d, 3) 'bga çekilen
+            dcf = dcf + dce 'bga çekilen toplam
+            d = d + 1
+        ElseIf (Left(Sayfa5.Cells(d, 2), 3) = "BGK") Then
+            ace = Sayfa5.Cells(d, 3) 'bgk çekilen
+            acf = acf + ace 'bgk çekilen toplam
+            d = d + 1
+        ElseIf (Left(Sayfa5.Cells(d, 2), 3) = "BGR") Then
+            cce = Sayfa5.Cells(d, 3) 'bgr çekilen
+            ccf = ccf + cce 'bgr çekilen toplam
+            d = d + 1
+        ElseIf (Left(Sayfa5.Cells(d, 2), 3) = "BGD") Then
+            bce = Sayfa5.Cells(d, 3) 'bgd çekilen
+            bcf = bcf + bce 'bgd çekilen toplam
+            d = d + 1
+        Else
+            fce = Sayfa5.Cells(d, 3) 'bg diğer çekilen
+            fcf = fcf + fce 'bg diğer çekilen toplamı
+            d = d + 1
+        End If
+    ElseIf (Left(Sayfa5.Cells(d, 1), 2) = "BU") Then
+        If (Left(Sayfa5.Cells(d, 2), 3) = "BUA") Then
+            ice = Sayfa5.Cells(d, 3) 'bua çekilen
+            icf = icf + ice 'bua çekilen toplam
+            d = d + 1
+        ElseIf (Left(Sayfa5.Cells(d, 2), 3) = "BUK") Then
+            gce = Sayfa5.Cells(d, 3) 'buk çekilen
+            gcf = gcf + gce 'buk çekilen toplam
+            d = d + 1
+        ElseIf (Left(Sayfa5.Cells(d, 2), 3) = "BUR") Then
+            ıce = Sayfa5.Cells(d, 3) 'bur çekilen
+            ıcf = ıcf + ıce 'bur çekilen toplam
+            d = d + 1
+        ElseIf (Left(Sayfa5.Cells(d, 2), 3) = "BUD") Then
+            hce = Sayfa5.Cells(d, 3) 'bud çekilen
+            hcf = hcf + hce 'bud çekilen toplam
+            d = d + 1
+        Else
+            kce = Sayfa5.Cells(d, 3) 'bu diğer çekilen
+            kcf = kcf + kce 'bu diğer çekilen toplamı
+            d = d + 1
+        End If
+    ElseIf (Left(Sayfa5.Cells(d, 1), 2) = "CK") Then
+        If (Left(Sayfa5.Cells(d, 2), 4) = "CK4A") Then
+            oce = Sayfa5.Cells(d, 3) 'ck4a çekilen
+            ocf = ocf + oce 'ck4a çekilen toplam
+            d = d + 1
+        ElseIf (Left(Sayfa5.Cells(d, 2), 4) = "CK1A") Then
+            öce = Sayfa5.Cells(d, 3) 'ck1a çekilen
+            öcf = öcf + öce 'ck1a çekilen toplam
+            d = d + 1
+        ElseIf (Left(Sayfa5.Cells(d, 2), 4) = "CK4K" Or Left(Sayfa5.Cells(d, 2), 4) = "CKBK") Then
+            lce = Sayfa5.Cells(d, 3) 'ck aks çekilen
+            lcf = lcf + lce 'ck aks çekilen toplam
+            d = d + 1
+        ElseIf (Left(Sayfa5.Cells(d, 2), 4) = "CK4R" Or Left(Sayfa5.Cells(d, 2), 4) = "CKBR") Then
+            nce = Sayfa5.Cells(d, 3) 'ck çorap çekilen
+            ncf = ncf + nce 'ck çorap çekilen toplam
+            d = d + 1
+        ElseIf (Left(Sayfa5.Cells(d, 2), 4) = "CK4D") Then
+            mce = Sayfa5.Cells(d, 3) 'ck4d çekilen
+            mcf = mcf + mce 'ck4d çekilen toplam
+            d = d + 1
+        Else
+            rce = Sayfa5.Cells(d, 3) 'ck diğer çekilen
+            rcf = rcf + rce 'ck diğer çekilen toplamı
+            d = d + 1
+        End If
+    ElseIf (Left(Sayfa5.Cells(d, 1), 2) = "CU") Then
+        If (Left(Sayfa5.Cells(d, 2), 4) = "CU4A") Then
+            uce = Sayfa5.Cells(d, 3) 'cu4a çekilen
+            ucf = ucf + uce 'cu4a çekilen toplam
+            d = d + 1
+        ElseIf (Left(Sayfa5.Cells(d, 2), 4) = "CU1A") Then
+            üce = Sayfa5.Cells(d, 3) 'cu1a çekilen
+            ücf = ücf + üce 'cu1a çekilen toplam
+            d = d + 1
+        ElseIf (Left(Sayfa5.Cells(d, 2), 4) = "CU4K" Or Left(Sayfa5.Cells(d, 2), 4) = "CUBK") Then
+            sce = Sayfa5.Cells(d, 3) 'cu aks çekilen
+            scf = scf + sce 'cu aks çekilen toplam
+            d = d + 1
+        ElseIf (Left(Sayfa5.Cells(d, 2), 4) = "CU4R" Or Left(Sayfa5.Cells(d, 2), 4) = "CUBR") Then
+            tce = Sayfa5.Cells(d, 3) 'cu çorap çekilen
+            tcf = tcf + tce 'cu çorap çekilen toplam
+            d = d + 1
+        ElseIf (Left(Sayfa5.Cells(d, 2), 4) = "CU4D") Then
+            şce = Sayfa5.Cells(d, 3) 'cu4d çekilen
+            şcf = şcf + şce 'cu4d çekilen toplam
+            d = d + 1
+        Else
+            yce = Sayfa5.Cells(d, 3) 'cu diğer çekilen
+            ycf = ycf + yce 'cu diğer çekilen toplamı
+            d = d + 1
+        End If
+    ElseIf (Left(Sayfa5.Cells(d, 1), 2) = "EV") Then
+        pce = Sayfa5.Cells(d, 3) 'ev çekilen
+        pcf = pcf + pce 'ev çekilen toplamı
+        d = d + 1
+    Else
+        d = d + 1
+    End If
+Loop
+Range("C37") = dcf 'bga çekilen
+Range("C38") = icf 'bua çekilen
+Range("C39") = ocf 'ck4a çekilen
+Range("C40") = öcf 'ck1a çekilen
+Range("C41") = ucf 'cu4a çekilen
+Range("C42") = ücf 'cu1a çekilen
+Range("C43") = Range("C37") + Range("C38") + Range("C39") + Range("C40") + Range("C41") + Range("C42") 'ayk çekilen toplamı
+Range("C50") = acf 'bg aks çekilen
+Range("C51") = gcf 'bu aks çekilen
+Range("C52") = lcf 'ck aks çekilen
+Range("C53") = scf 'cu aks çekilen
+Range("C54") = Range("C50") + Range("C51") + Range("C52") + Range("C53") 'aks çekilen toplamı
+Range("J7") = fcf 'bg çekilen
+Range("J8") = kcf 'bu çekilen
+Range("J9") = rcf 'ck çekilen
+Range("J10") = ycf 'cu çekilen
+Range("J11") = pcf 'ev çekilen
+Range("J12") = ccf + ıcf + ncf + tcf 'çorap çekilen
+Range("J13") = bcf + hcf + mcf + şcf 'kozmetik-oyuncak çekilen
+Range("J14") = Range("J7") + Range("J8") + Range("J9") + Range("J10") + Range("J11") + Range("J12") + Range("J13") 'çekilen toplam
+'SATILAN ÜRÜN
+Do While (Sayfa6.Cells(e, 2) > 0)
+    If (Left(Sayfa6.Cells(e, 1), 2) = "BG") Then
+        If (Left(Sayfa6.Cells(e, 2), 3) = "BGA") Then
+            dde = Sayfa6.Cells(e, 3) 'bga satılan
+            ddf = ddf + dde 'bga satılan toplam
+            e = e + 1
+        ElseIf (Left(Sayfa6.Cells(e, 2), 3) = "BGK") Then
+            ade = Sayfa6.Cells(e, 3) 'bgk satılan
+            adf = adf + ade 'bgk satılan toplam
+            e = e + 1
+        ElseIf (Left(Sayfa6.Cells(e, 2), 3) = "BGR") Then
+            cde = Sayfa6.Cells(e, 3) 'bgr satılan
+            cdf = cdf + cde 'bgr satılan toplam
+            e = e + 1
+        ElseIf (Left(Sayfa6.Cells(e, 2), 3) = "BGD") Then
+            bde = Sayfa6.Cells(e, 3) 'bgd satılan
+            bdf = bdf + bde 'bgd satılan toplam
+            e = e + 1
+        Else
+            fde = Sayfa6.Cells(e, 3) 'bg diğer satılan
+            fdf = fdf + fde 'bg diğer satılan toplamı
+            e = e + 1
+        End If
+    ElseIf (Left(Sayfa6.Cells(e, 1), 2) = "BU") Then
+        If (Left(Sayfa6.Cells(e, 2), 3) = "BUA") Then
+            ide = Sayfa6.Cells(e, 3) 'bua satılan
+            idf = idf + ide 'bua satılan toplam
+            e = e + 1
+        ElseIf (Left(Sayfa6.Cells(e, 2), 3) = "BUK") Then
+            gde = Sayfa6.Cells(e, 3) 'buk satılan
+            gdf = gdf + gde 'buk satılan toplam
+            e = e + 1
+        ElseIf (Left(Sayfa6.Cells(e, 2), 3) = "BUR") Then
+            ıde = Sayfa6.Cells(e, 3) 'bur satılan
+            ıdf = ıdf + ıde 'bur satılan toplam
+            e = e + 1
+        ElseIf (Left(Sayfa6.Cells(e, 2), 3) = "BUD") Then
+            hde = Sayfa6.Cells(e, 3) 'bud satılan
+            hdf = hdf + hde 'bud satılan toplam
+            e = e + 1
+        Else
+            kde = Sayfa6.Cells(e, 3) 'bu diğer satılan
+            kdf = kdf + kde 'bu diğer satılan toplamı
+            e = e + 1
+        End If
+    ElseIf (Left(Sayfa6.Cells(e, 1), 2) = "CK") Then
+        If (Left(Sayfa6.Cells(e, 2), 4) = "CK4A") Then
+            ode = Sayfa6.Cells(e, 3) 'ck4a satılan
+            odf = odf + ode 'ck4a satılan toplam
+            e = e + 1
+        ElseIf (Left(Sayfa6.Cells(e, 2), 4) = "CK1A") Then
+            öde = Sayfa6.Cells(e, 3) 'ck1a satılan
+            ödf = ödf + öde 'ck1a satılan toplam
+            e = e + 1
+        ElseIf (Left(Sayfa6.Cells(e, 2), 4) = "CK4K" Or Left(Sayfa6.Cells(e, 2), 4) = "CKBK") Then
+            lde = Sayfa6.Cells(e, 3) 'ck aks satılan
+            ldf = ldf + lde 'ck aks satılan toplam
+            e = e + 1
+        ElseIf (Left(Sayfa6.Cells(e, 2), 4) = "CK4R" Or Left(Sayfa6.Cells(e, 2), 4) = "CKBR") Then
+            nde = Sayfa6.Cells(e, 3) 'ck çorap satılan
+            ndf = ndf + nde 'ck çorap satılan toplam
+            e = e + 1
+        ElseIf (Left(Sayfa6.Cells(e, 2), 4) = "CK4D") Then
+            mde = Sayfa6.Cells(e, 3) 'ck4d satılan
+            mdf = mdf + mde 'ck4d satılan toplam
+            e = e + 1
+        Else
+            rde = Sayfa6.Cells(e, 3) 'ck diğer satılan
+            rdf = rdf + rde 'ck diğer satılan toplamı
+            e = e + 1
+        End If
+    ElseIf (Left(Sayfa6.Cells(e, 1), 2) = "CU") Then
+        If (Left(Sayfa6.Cells(e, 2), 4) = "CU4A") Then
+            ude = Sayfa6.Cells(e, 3) 'cu4a satılan
+            udf = udf + ude 'cu4a satılan toplam
+            e = e + 1
+        ElseIf (Left(Sayfa6.Cells(e, 2), 4) = "CU1A") Then
+            üde = Sayfa6.Cells(e, 3) 'cu1a satılan
+            üdf = üdf + üde 'cu1a satılan toplam
+            e = e + 1
+        ElseIf (Left(Sayfa6.Cells(e, 2), 4) = "CU4K" Or Left(Sayfa6.Cells(e, 2), 4) = "CUBK") Then
+            sde = Sayfa6.Cells(e, 3) 'cu aks satılan
+            sdf = sdf + sde 'cu aks satılan toplam
+            e = e + 1
+        ElseIf (Left(Sayfa6.Cells(e, 2), 4) = "CU4R" Or Left(Sayfa6.Cells(e, 2), 4) = "CUBR") Then
+            tde = Sayfa6.Cells(e, 3) 'cu çorap satılan
+            tdf = tdf + tde 'cu çorap satılan toplam
+            e = e + 1
+        ElseIf (Left(Sayfa6.Cells(e, 2), 4) = "CU4D") Then
+            şde = Sayfa6.Cells(e, 3) 'cu4d satılan
+            şdf = şdf + şde 'cu4d satılan toplam
+            e = e + 1
+        Else
+            yde = Sayfa6.Cells(e, 3) 'cu diğer satılan
+            ydf = ydf + yde 'cu diğer satılan toplamı
+            e = e + 1
+        End If
+    ElseIf (Left(Sayfa6.Cells(e, 1), 2) = "EV") Then
+            pde = Sayfa6.Cells(e, 3) 'ev diğer satılan
+            pdf = pdf + pde 'ev diğer satılan toplamı
+            e = e + 1
+    Else
+        e = e + 1
+    End If
+Loop
+Range("D37") = ddf 'bga satılan
+Range("D38") = idf 'bua satılan
+Range("D39") = odf 'ck4a satılan
+Range("D40") = ödf 'ck1a satılan
+Range("D41") = udf 'cu4a satılan
+Range("D42") = üdf 'cu1a satılan
+Range("D43") = Range("D37") + Range("D38") + Range("D39") + Range("D40") + Range("D41") + Range("D42") 'ayk satılan toplamı
+Range("D50") = adf 'bg aks satılan
+Range("D51") = gdf 'bu aks satılan
+Range("D52") = ldf 'ck aks satılan
+Range("D53") = sdf 'cu aks satılan
+Range("D54") = Range("D50") + Range("D51") + Range("D52") + Range("D53") 'aks satılan toplamı
+Range("F7") = fdf 'bg satılan
+Range("F8") = kdf 'bu satılan
+Range("F9") = rdf 'ck satılan
+Range("F10") = ydf 'cu satılan
+Range("F11") = pdf 'ev satılan
+Range("F12") = cdf + ıdf + ndf + tdf 'çorap satılan
+Range("F13") = bdf + hdf + mdf + şdf 'kozmetik-oyuncak satılan
+Range("F14") = Range("F7") + Range("F8") + Range("F9") + Range("F10") + Range("F11") + Range("F12") + Range("F13") 'satılan toplam
+MsgBox ("İşlem Tamamlandı")
+End Sub
+
+Private Sub Ekrani_Temizle_Click()
+Cells.ClearContents
+Cells.ClearFormats
+Range("A5:B5").Merge ' hücre birleştirme
+Range("E5:F5").Merge
+Range("I5:J5").Merge
+Range("A20:B20").Merge
+Range("D20:G20").Merge
+Range("I20:J20").Merge
+Range("D58:G58").Merge
+Range("A35:J35").Merge
+Range("A48:J48").Merge
+Range("A5") = "GELEN SEVKİYAT"
+Range("E5") = "SATILAN ÜRÜN"
+Range("I5") = "ÇEKİLEN ÜRÜN"
+Range("A20") = "GÜNCEL DEPO STOĞU"
+Range("D20") = "YENİ SEZON STOĞU"
+Range("I20") = "GÜNCEL REYON STOĞU"
+Range("D58") = "REYON İNDİRİM ORANLARI"
+Range("A35") = "AYAKKABI"
+Range("A48") = "AKSESUAR"
+Range("E6") = "ÜST GRUP"
+Range("F6") = "ADET"
+Range("D21") = "ÜST GRUP"
+Range("E21") = "BÜTÜN SEZONLAR"
+Range("F21") = "YENİ SEZON"
+Range("G21") = "YENİ SEZON ORANI"
+Range("D59") = "ÜST GRUP"
+Range("E59") = "TOPLAM STOK"
+Range("F59") = "İNDİRİMLİ REYON STOK"
+Range("G59") = "İNDİRİMLİ STOK ORANI"
+Range("I36") = "İNDİRİMLİ REYON STOK"
+Range("J36") = "İNDİRİMLİ STOK ORANI"
+Range("I49") = "İNDİRİMLİ REYON STOK"
+Range("J49") = "İNDİRİMLİ STOK ORANI"
+Range("A36") = "MERCH ALT GRUP"
+Range("B36") = "GELEN"
+Range("C36") = "ÇEKİLEN"
+Range("D36") = "SATILAN"
+Range("E36") = "DEPO STOK"
+Range("F36") = "REYON STOK"
+Range("G36") = "YENİ SEZON"
+Range("H36") = "YENİ SEZON ORANI"
+Range("A49") = "ÜST GRUP"
+Range("B49") = "GELEN"
+Range("C49") = "ÇEKİLEN"
+Range("D49") = "SATILAN"
+Range("E49") = "DEPO STOK"
+Range("F49") = "REYON STOK"
+Range("G49") = "YENİ SEZON"
+Range("H49") = "YENİ SEZON ORANI"
+Range("A6") = "ÜST GRUP"
+Range("B6") = "ADET"
+Range("A7") = "BG"
+Range("A8") = "BU"
+Range("A9") = "CK"
+Range("A10") = "CU"
+Range("A11") = "ÇORAP"
+Range("A12") = "KOZMETİK"
+Range("A13") = "OYUNCAK"
+Range("A14") = "TOPLAM"
+Range("E7") = "BG"
+Range("E8") = "BU"
+Range("E9") = "CK"
+Range("E10") = "CU"
+Range("E11") = "EV"
+Range("E12") = "ÇORAP"
+Range("E13") = "KOZMETİK-OYUNCAK"
+Range("E14") = "TOPLAM"
+Range("I6") = "ÜST GRUP"
+Range("J6") = "ADET"
+Range("I7") = "BG"
+Range("I8") = "BU"
+Range("I9") = "CK"
+Range("I10") = "CU"
+Range("I11") = "EV"
+Range("I12") = "ÇORAP"
+Range("I13") = "KOZMETİK-OYUNCAK"
+Range("I14") = "TOPLAM"
+Range("A21") = "ÜST GRUP"
+Range("B21") = "ADET"
+Range("A22") = "BG"
+Range("A23") = "BU"
+Range("A24") = "CK"
+Range("A25") = "CU"
+Range("A26") = "ÇORAP"
+Range("A27") = "KOZMETİK"
+Range("A28") = "OYUNCAK"
+Range("A29") = "TOPLAM"
+Range("D22") = "BG"
+Range("D23") = "BU"
+Range("D24") = "CK"
+Range("D25") = "CU"
+Range("D26") = "ÇORAP"
+Range("D27") = "KOZMETİK"
+Range("D28") = "OYUNCAK"
+Range("D29") = "TOPLAM"
+Range("I21") = "ÜST GRUP"
+Range("J21") = "ADET"
+Range("I22") = "BG"
+Range("I23") = "BU"
+Range("I24") = "CK"
+Range("I25") = "CU"
+Range("I26") = "ÇORAP"
+Range("I27") = "KOZMETİK"
+Range("I28") = "OYUNCAK"
+Range("I29") = "TOPLAM"
+Range("D60") = "BG"
+Range("D61") = "BU"
+Range("D62") = "CK"
+Range("D63") = "CU"
+Range("D64") = "ÇORAP"
+Range("D65") = "KOZMETİK"
+Range("D66") = "OYUNCAK"
+Range("D67") = "TOPLAM"
+Range("A37") = "BGA"
+Range("A38") = "BUA"
+Range("A39") = "CK4A"
+Range("A40") = "CK1A"
+Range("A41") = "CU4A"
+Range("A42") = "CU1A"
+Range("A43") = "TOPLAM"
+Range("A50") = "BG"
+Range("A51") = "BU"
+Range("A52") = "CK"
+Range("A53") = "CU"
+Range("A54") = "TOPLAM"
+Range("A1:N70").HorizontalAlignment = xlCenter ' yazıyı ortalama
+Range("A1:N70").Font.Bold = True ' yazıyı kalınlaştırma
+'Renklendirme
+Range("A22:B28").Interior.Color = RGB(145, 184, 227)
+Range("D22:G28").Interior.Color = RGB(145, 184, 227)
+Range("I22:J28").Interior.Color = RGB(145, 184, 227)
+Range("A37:J42").Interior.Color = RGB(145, 184, 227)
+Range("A50:J53").Interior.Color = RGB(145, 184, 227)
+Range("D60:G66").Interior.Color = RGB(145, 184, 227)
+Range("A7:B13").Interior.Color = RGB(145, 184, 227)
+Range("E7:F13").Interior.Color = RGB(145, 184, 227)
+Range("I7:J13").Interior.Color = RGB(145, 184, 227)
+Range("A29:B29").Interior.Color = RGB(242, 239, 130)
+Range("A14:B14").Interior.Color = RGB(242, 239, 130)
+Range("E14:F14").Interior.Color = RGB(242, 239, 130)
+Range("I14:J14").Interior.Color = RGB(242, 239, 130)
+Range("D29:G29").Interior.Color = RGB(242, 239, 130)
+Range("I29:J29").Interior.Color = RGB(242, 239, 130)
+Range("A43:J43").Interior.Color = RGB(242, 239, 130)
+Range("D67:G67").Interior.Color = RGB(242, 239, 130)
+Range("A54:J54").Interior.Color = RGB(242, 239, 130)
+Range("E6:F6").Interior.Color = RGB(202, 202, 202)
+Range("A6:B6").Interior.Color = RGB(202, 202, 202)
+Range("I6:J6").Interior.Color = RGB(202, 202, 202)
+Range("D21:G21").Interior.Color = RGB(202, 202, 202)
+Range("A36:J36").Interior.Color = RGB(202, 202, 202)
+Range("D59:G59").Interior.Color = RGB(202, 202, 202)
+Range("A49:J49").Interior.Color = RGB(202, 202, 202)
+Range("A21:B21").Interior.Color = RGB(202, 202, 202)
+Range("I21:J21").Interior.Color = RGB(202, 202, 202)
+Range("A5").Font.Size = 18
+Range("E5").Font.Size = 18
+Range("I5").Font.Size = 18
+Range("A20").Font.Size = 18
+Range("D20").Font.Size = 18
+Range("I20").Font.Size = 18
+Range("A35").Font.Size = 18
+Range("J35").Font.Size = 18
+Range("A48").Font.Size = 18
+Range("D58").Font.Size = 18
+Range("A1:L70").Font.Name = "Times New Roman"
+Range("A6:B14").Borders.LineStyle = 1
+Range("E6:F14").Borders.LineStyle = 1
+Range("I6:J14").Borders.LineStyle = 1
+Range("A21:B29").Borders.LineStyle = 1
+Range("D21:G29").Borders.LineStyle = 1
+Range("I21:J29").Borders.LineStyle = 1
+Range("A36:J43").Borders.LineStyle = 1
+Range("A49:J54").Borders.LineStyle = 1
+Range("D59:G67").Borders.LineStyle = 1
+MsgBox ("İşlem Tamamlandı")
+End Sub
